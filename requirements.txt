@@ -1,0 +1,17 @@
+pyspark
+numpy
+pandas
+scipy
+scikit-learn
+pyarrow
+transformers
+accelerate
+duckdb
+s3fs
+umap-learn
+smart-open
+spacy
+seqeval
+numba
+sqlalchemy
+pytest
