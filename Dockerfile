@@ -24,12 +24,6 @@ RUN apt-get update && apt-get install -y wget && \
     rm miniconda.sh
 ENV PATH="/opt/conda/bin:$PATH"
 
-# Copy only requirements.txt first to leverage Docker layer caching
-# COPY requirements.txt /tmp/requirements.txt
-
-# Install Python dependencies
-# RUN pip install --no-cache-dir -r /tmp/requirements.txt
-
 # Install additional packages directly
 RUN pip install --no-cache-dir \
     pyspark \
@@ -55,11 +49,9 @@ RUN pip install --no-cache-dir \
     gensim \
     numba \
     sqlalchemy \
-    pytest
-
-RUN pip install fsspec
-# Install datasets library with version constraint
-RUN pip install --no-cache-dir "datasets>=2.0.0"
+    pytest \
+    fsspec \
+    "datasets>=2.0.0"
 
 # Copy the rest of the application code
 COPY . /app
