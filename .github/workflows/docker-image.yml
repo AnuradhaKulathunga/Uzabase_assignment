@@ -28,4 +28,3 @@ jobs:
         context: .
         push: true
         tags: anuradhakulatunge/uzabase_assignment:latest
-        
